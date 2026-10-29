@@ -9,6 +9,10 @@ const siteUrl = "https://bota-website.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  verification: {
+    google: "wui8PwkQwDjQ5SYY7GNk_TI7H2HtxNwTy74vbdQVg5g",
+  },
+
   title: {
     default: "BotA | AI-Powered Clinic Assistant",
     template: "%s | BotA",
