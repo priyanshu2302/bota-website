@@ -4,11 +4,11 @@ import "./globals.css";
 import AIChatWidget from "../components/AIChatWidget";
 import Loader from "@/components/loader";
 
-
 const siteUrl = "https://bota-website.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+
   verification: {
     google: "wui8PwkQwDjQ5SYY7GNk_TI7H2HtxNwTy74vbdQVg5g",
   },
@@ -17,12 +17,16 @@ export const metadata: Metadata = {
     default: "BotA | AI-Powered Clinic Assistant",
     template: "%s | BotA",
   },
+
   description:
-    "BotA helps clinics handle routine patient enquiries and appointment requests with AI-powered conversations.",
+    "BotA is an AI-powered clinic assistant that helps healthcare teams manage routine patient enquiries and appointment requests.",
+
   applicationName: "BotA",
+
   alternates: {
     canonical: "/",
   },
+
   robots: {
     index: true,
     follow: true,
@@ -31,6 +35,7 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
+
   openGraph: {
     title: "BotA | AI-Powered Clinic Assistant",
     description:
@@ -39,6 +44,7 @@ export const metadata: Metadata = {
     siteName: "BotA",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "BotA | AI-Powered Clinic Assistant",
@@ -47,6 +53,17 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "BotA",
+  alternateName: "BotA AI Clinic Assistant",
+  url: siteUrl,
+  publisher: {
+    "@type": "Organization",
+    name: "BotA",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -55,6 +72,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+      </head>
+
       <body>
         <Loader />
         {children}
