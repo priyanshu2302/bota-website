@@ -5,26 +5,26 @@ const features = [
   {
     number: "01",
     icon: "✳",
-    title: "Patient enquiries",
+    title: "AI-powered patient enquiries",
     description:
-      "Give patients a simple way to ask routine questions and understand the next step.",
+      "Help patients get clear responses to routine clinic questions through a conversational AI assistant, reducing repetitive communication for clinic teams.",
     tag: "SMART RESPONSES",
   },
   {
     number: "02",
     icon: "◷",
-    title: "Appointment requests",
+    title: "Appointment booking requests",
     description:
-      "Make it easier for patients to express their booking needs through a guided conversation.",
-    tag: "LESS FRICTION",
+      "Make it easier for patients to explain their appointment needs, share preferred timings and begin the appointment-request process.",
+    tag: "SIMPLER REQUESTS",
   },
   {
     number: "03",
     icon: "◎",
-    title: "Always-on assistance",
+    title: "Digital clinic assistance",
     description:
-      "Give patients a digital starting point for enquiries beyond your team's usual working hours.",
-    tag: "24/7 ACCESS",
+      "Give patients a convenient digital starting point for routine enquiries, including outside your team's usual working hours.",
+    tag: "DIGITAL ACCESS",
   },
 ];
 
@@ -33,40 +33,73 @@ const steps = [
     number: "01",
     title: "A patient starts a conversation",
     description:
-      "They ask a routine question or explain that they need an appointment.",
+      "A patient asks a routine healthcare-related question or explains that they would like to request a clinic appointment.",
   },
   {
     number: "02",
-    title: "BotA understands the request",
+    title: "The AI clinic assistant responds",
     description:
-      "The assistant guides the conversation and gathers relevant details.",
+      "BotA guides the conversation, understands the patient's request and gathers relevant details.",
   },
   {
     number: "03",
     title: "The next step becomes clearer",
     description:
-      "Patients get helpful guidance, while clinic teams stay in control.",
+      "Patients receive helpful guidance, while clinic teams remain involved in managing the next steps.",
   },
 ];
 
 const roadmap = [
   {
     status: "FOUNDATION",
-    title: "Conversational assistance",
+    title: "AI conversational assistance",
     description:
-      "AI-powered conversations for common patient questions and appointment enquiries.",
+      "AI-powered conversations for routine patient enquiries and appointment requests.",
   },
   {
     status: "IN DEVELOPMENT",
-    title: "Smarter clinic workflows",
+    title: "Smarter clinic management",
     description:
-      "A vision for clinic-specific settings, appointment management, and a more connected experience.",
+      "Clinic-specific settings, an administrative dashboard and more configurable workflows.",
   },
   {
     status: "FUTURE VISION",
-    title: "One connected front desk",
+    title: "Connected appointment workflows",
     description:
-      "A unified workspace for clinic communication, scheduling workflows, reminders, and patient follow-ups.",
+      "A broader platform for scheduling, availability management, reminders and patient follow-ups.",
+  },
+];
+
+const faqs = [
+  {
+    question: "What is BotA?",
+    answer:
+      "BotA is an AI-powered clinic assistant designed to help healthcare practices handle routine patient enquiries and appointment requests through conversational interactions.",
+  },
+  {
+    question: "How can an AI assistant help a clinic?",
+    answer:
+      "An AI clinic assistant can help respond to routine questions, collect appointment preferences and guide patients towards the next step. This can reduce repetitive communication handled by clinic staff.",
+  },
+  {
+    question: "Can BotA help with appointment booking?",
+    answer:
+      "BotA is designed to help patients communicate their appointment requirements and submit appointment requests. Automated availability checks, confirmed bookings and connected scheduling workflows depend on the features and integrations available.",
+  },
+  {
+    question: "Is BotA a replacement for clinic staff?",
+    answer:
+      "No. BotA is designed to support clinic teams with administrative communication. It does not replace healthcare professionals, clinical judgement or emergency services.",
+  },
+  {
+    question: "Can BotA be configured for different clinics?",
+    answer:
+      "Clinic-specific settings and an administrative dashboard are part of the product development roadmap. The long-term goal is to make the assistant adaptable to different clinic requirements.",
+  },
+  {
+    question: "How can a clinic try BotA?",
+    answer:
+      "Clinic owners and practice managers can explore the available prototype using the Try the BotA Prototype link or contact the BotA team to discuss the product and potential pilot opportunities.",
   },
 ];
 
@@ -75,18 +108,21 @@ export default function Home() {
     <main>
       <header className="site-header">
         <nav className="nav-container" aria-label="Main navigation">
-
           <a href="#home" className="brand" aria-label="BotA home">
-            <img src="/bota-logo.png" alt="BotA logo" className="brand-logo" />
+            <img
+              src="/bota-logo.png"
+              alt="BotA AI clinic assistant logo"
+              className="brand-logo"
+            />
             <span>BotA</span>
             <span className="brand-status" />
           </a>
-
 
           <div className="nav-links">
             <a href="#product">Product</a>
             <a href="#how-it-works">How it works</a>
             <a href="#vision">Vision</a>
+            <a href="#faq">FAQs</a>
             <a href="#roadmap">Roadmap</a>
           </div>
 
@@ -109,14 +145,18 @@ export default function Home() {
             </div>
 
             <h1>
-              Better conversations.
-              <span className="gradient-text"> Calmer clinic days.</span>
+              Your AI clinic assistant.
+              <span className="gradient-text">
+                {" "}Better patient conversations.
+              </span>
             </h1>
 
             <p className="hero-description">
-              BotA helps clinics handle routine patient questions and
-              appointment requests with a more responsive, straightforward
-              digital experience.
+              BotA is an AI-powered clinic assistant designed to help
+              healthcare practices handle routine patient enquiries and
+              appointment requests through simple, responsive conversations.
+              Give patients a clearer way to ask questions while helping
+              clinic teams spend less time on repetitive communication.
             </p>
 
             <div className="hero-actions">
@@ -124,10 +164,11 @@ export default function Home() {
                 className="button button-primary"
                 href="https://chat-with-bota.vercel.app/ui"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Try the BotA prototype <span aria-hidden="true">↗</span>
               </a>
+
               <a className="button button-secondary" href="#how-it-works">
                 See how it works <span aria-hidden="true">↓</span>
               </a>
@@ -139,7 +180,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="BotA assistant preview">
+          <div
+            className="hero-visual"
+            aria-label="Illustrative preview of the BotA AI clinic assistant"
+          >
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
             <div className="orbit orbit-three" />
@@ -187,13 +231,19 @@ export default function Home() {
         <div className="container-width">
           <div className="section-heading reveal">
             <div className="eyebrow">01 / THE PRODUCT</div>
+
             <h2>
-              The first conversation
-              <span className="gradient-text"> sets the tone.</span>
+              An AI assistant for clinics.
+              <span className="gradient-text">
+                {" "}Designed around patients.
+              </span>
             </h2>
+
             <p>
-              Patients need clear answers. Clinic teams need room to focus.
-              BotA is designed to make routine communication feel simpler.
+              BotA brings AI-powered patient communication into the clinic
+              experience. From routine patient enquiries to appointment
+              requests, the goal is to make everyday interactions simpler
+              for patients and healthcare teams.
             </p>
           </div>
 
@@ -208,9 +258,11 @@ export default function Home() {
                   <span className="feature-icon">{feature.icon}</span>
                   <span className="feature-number">{feature.number}</span>
                 </div>
+
                 <div className="feature-tag">{feature.tag}</div>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
+
                 <div className="feature-card-footer">
                   <span>Explore capability</span>
                   <span aria-hidden="true">↗</span>
@@ -222,7 +274,7 @@ export default function Home() {
           <div className="product-note reveal">
             <span className="note-icon">✳</span>
             <p>
-              Built around useful conversations, clear expectations, and
+              Built around useful conversations, clear expectations and
               clinic-controlled workflows.
             </p>
           </div>
@@ -236,13 +288,18 @@ export default function Home() {
         <div className="container-width">
           <div className="section-heading reveal">
             <div className="eyebrow">02 / HOW IT WORKS</div>
+
             <h2>
-              A clearer path from
-              <span className="gradient-text"> question to next step.</span>
+              From patient enquiry
+              <span className="gradient-text">
+                {" "}to the next step.
+              </span>
             </h2>
+
             <p>
-              Simple by design: support the conversation, collect relevant
-              details, and keep the clinic in control.
+              A straightforward conversational experience: patients explain
+              what they need, the AI assistant gathers relevant information,
+              and clinic teams stay in control of the process.
             </p>
           </div>
 
@@ -251,12 +308,14 @@ export default function Home() {
               <article className="workflow-card reveal" key={step.number}>
                 <div className="workflow-card-top">
                   <span className="step-number">{step.number}</span>
+
                   {index < steps.length - 1 && (
                     <span className="step-connector" aria-hidden="true">
                       ─────→
                     </span>
                   )}
                 </div>
+
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </article>
@@ -269,15 +328,22 @@ export default function Home() {
         <div className="container-width vision-layout">
           <div className="vision-copy reveal">
             <div className="eyebrow">03 / OUR VISION</div>
+
             <h2>
               Less repetitive work.
-              <span className="gradient-text"> More human attention.</span>
+              <span className="gradient-text">
+                {" "}More human attention.
+              </span>
             </h2>
+
             <p>
               We believe technology should make healthcare communication
               easier, not colder. BotA aims to help clinics spend less time
               repeating routine information and more time supporting people.
+              Our long-term vision is to make AI-powered clinic workflows
+              more connected, configurable and accessible.
             </p>
+
             <a className="text-link" href="#roadmap">
               Discover the direction <span aria-hidden="true">↗</span>
             </a>
@@ -286,7 +352,7 @@ export default function Home() {
           <div className="vision-panel reveal">
             <div className="vision-panel-header">
               <span className="panel-indicator" />
-              BOT A / DESIGN PRINCIPLES
+              BOTA / DESIGN PRINCIPLES
               <span className="panel-version">V.01</span>
             </div>
 
@@ -329,14 +395,18 @@ export default function Home() {
         <div className="container-width">
           <div className="section-heading reveal">
             <div className="eyebrow">04 / WHAT'S NEXT</div>
+
             <h2>
               Starting with conversations.
-              <span className="gradient-text"> Growing into workflows.</span>
+              <span className="gradient-text">
+                {" "}Growing into workflows.
+              </span>
             </h2>
+
             <p>
-              Our direction is to make clinic communication more connected
-              over time. Future capabilities depend on development and
-              validation.
+              BotA is being developed with a broader vision for clinic
+              automation. We believe in being transparent about current
+              capabilities and future product development.
             </p>
           </div>
 
@@ -347,11 +417,54 @@ export default function Home() {
                   <span className="roadmap-index">0{index + 1}</span>
                   <span className="roadmap-status">{item.status}</span>
                 </div>
+
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
+
                 <div className="roadmap-progress">
                   <span style={{ width: `${100 - index * 28}%` }} />
                 </div>
+              </article>
+            ))}
+          </div>
+
+          <p className="contact-footnote">
+            Roadmap items describe planned development and should not be
+            interpreted as currently available product features.
+          </p>
+        </div>
+      </section>
+
+      <section className="faq-section section-space" id="faq">
+        <div className="container-width">
+          <div className="section-heading reveal">
+            <div className="eyebrow">05 / FREQUENTLY ASKED QUESTIONS</div>
+
+            <h2>
+              Questions about
+              <span className="gradient-text">
+                {" "}BotA?
+              </span>
+            </h2>
+
+            <p>
+              Learn more about our AI clinic assistant, patient enquiry
+              support, appointment requests and the future of BotA.
+            </p>
+          </div>
+
+          <div className="feature-grid">
+            {faqs.map((faq, index) => (
+              <article className="feature-card reveal" key={faq.question}>
+                <div className="feature-card-top">
+                  <span className="feature-icon">?</span>
+                  <span className="feature-number">
+                    0{index + 1}
+                  </span>
+                </div>
+
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
               </article>
             ))}
           </div>
@@ -372,18 +485,19 @@ export default function Home() {
             </h2>
 
             <p>
-              Interested in BotA for your clinic, a potential partnership,
-              or simply want to learn more? Contact our team directly.
+              Interested in an AI assistant for your clinic, a potential
+              partnership or simply want to learn more about BotA?
+              Contact our team directly.
             </p>
 
-            <div className="contact-actions"
+            <div
+              className="contact-actions"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
                 gap: "16px",
                 alignItems: "center",
               }}
-
             >
               <a
                 className="button button-primary"
@@ -415,18 +529,21 @@ export default function Home() {
           <a href="#home" className="brand footer-brand">
             <img
               src="/bota-logo.png"
-              alt="BotA logo"
+              alt="BotA AI clinic assistant logo"
               className="brand-logo"
             />
             <span>BotA</span>
           </a>
 
-          <p>Thoughtful AI for better clinic conversations.</p>
+          <p>
+            AI-powered clinic assistance for better patient conversations.
+          </p>
 
           <a className="back-to-top" href="#home">
             Back to top ↑
           </a>
         </div>
+
         <div className="footer-bottom container-width">
           <span>© 2026 BotA</span>
           <span>Designed for clearer clinic communication.</span>
